@@ -1,4 +1,6 @@
-organization  := "com.example"
+organization  := "com.stylekick"
+
+name := "sk-core"
 
 version       := "0.1"
 
@@ -20,3 +22,8 @@ libraryDependencies ++= {
 }
 
 Revolver.settings
+
+lazy val `sk-core` = project.in(file(".")).aggregate(`stylekick-common`).dependsOn(`stylekick-common`)
+
+lazy val `stylekick-common` = project.in(file("stylekick-common"))
+
