@@ -1,3 +1,5 @@
+import com.typesafe.sbt.SbtStartScript
+
 organization  := "com.stylekick"
 
 name := "sk-core"
@@ -22,6 +24,8 @@ libraryDependencies ++= {
 }
 
 Revolver.settings
+
+seq(SbtStartScript.startScriptForClassesSettings: _*)
 
 lazy val `sk-core` = project.in(file(".")).aggregate(`stylekick-common`).dependsOn(`stylekick-common`)
 
